@@ -1,0 +1,24 @@
+package javacore;
+
+public class ConDemo {
+    int rollNo;
+    float fee;
+    public ConDemo(int i,float f) {
+        this.rollNo=i;
+        this.fee=f;
+
+    }
+    public void sample() {
+        System.out.println("Test Method");
+        System.out.println("Roll no : "+this.rollNo);
+        System.out.println("Fee is: "+this.fee);
+
+    }
+    public static void main(String[] args) {
+        System.out.println("Hello");
+        ConDemo cd=new ConDemo(123,3300f);
+        cd.sample();
+
+
+    }
+}
