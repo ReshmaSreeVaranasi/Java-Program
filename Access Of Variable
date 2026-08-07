@@ -1,0 +1,23 @@
+public class AccessOfVariable {
+    public  class Basic {
+        int a=9;
+    }
+    void Example() {
+        System.out.println("This is a test method");
+
+    }
+    void SampleCase() {
+        System.out.println("This is a test method");
+    }
+    public static void main(String[] args) {
+        int x=1,y=2;
+        System.out.println("Result is"+(x+y));
+        AccessOfVariable outer = new AccessOfVariable();
+        Basic obj = outer.new Basic();
+
+        System.out.println("Result is " + obj.a);
+
+
+
+    }
+}
