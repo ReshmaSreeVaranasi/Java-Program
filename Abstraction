@@ -1,0 +1,20 @@
+package javacore;
+abstract class Base{
+    int x=1;
+    void sayMyName() {
+System.out.println("My name is Lalitha");
+    }
+abstract void sayMyAge();
+}
+public class Abstraction extends Base{
+@Override
+void sayMyAge() {
+    System.out.println("My age is 18");
+}
+public static void main(String[] args) {
+   Abstraction a=new Abstraction();
+   System.out.println(a.x);
+   a.sayMyName();
+   a.sayMyAge();
+}
+}
