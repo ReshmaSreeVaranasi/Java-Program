@@ -1,309 +1,390 @@
-package javacore;
 import java.util.Scanner;
-
-
 public class StudentUtilityProgram {
-
-    // Part D: Methods
-    static int factorial(int n) {
-        int fact = 1;
-        for (int i = 1; i <= n; i++) {
-            fact *= i;
-        }
-        return fact;
-    }
-
-    static boolean prime(int n) {
-        if (n <= 1)
-            return false;
-
-        for (int i = 2; i <= n / 2; i++) {
-            if (n % i == 0)
-                return false;
-        }
-        return true;
-    }
-
-    static int maximum(int a, int b) {
-        return (a > b) ? a : b;
-    }
-
-    static double areaOfCircle(double r) {
-        return 3.14 * r * r;
-    }
-
     public static void main(String[] args) {
-
         Scanner sc = new Scanner(System.in);
-        int choice;
+        System.out.println("1. Part 1");
+        System.out.println("2. Part 2");
+        System.out.println("3. Part 3");
+        System.out.println("4. Part 4");
+        System.out.print("Enter your choice: ");
+        int choice = sc.nextInt();
+        switch (choice) {
+            case 1:
+                System.out.print("Enter case 1-4 ");
+                int achoice = sc.nextInt();
+                String name="";
+                int rollno;double marks1,marks2,marks3,total,percentage;
+                switch (achoice) {
 
-        do {
-            System.out.println("\n===== STUDENT UTILITY PROGRAM =====");
-            System.out.println("1. Student Information");
-            System.out.println("2. Even or Odd");
-            System.out.println("3. Largest of Three Numbers");
-            System.out.println("4. Display Grade");
-            System.out.println("5. Day of Week");
-            System.out.println("6. Multiplication Table");
-            System.out.println("7. Numbers from 1 to N");
-            System.out.println("8. Sum of First N Natural Numbers");
-            System.out.println("9. Fibonacci Series");
-            System.out.println("10. Factorial");
-            System.out.println("11. Prime Number Check");
-            System.out.println("12. Maximum of Two Numbers");
-            System.out.println("13. Area of Circle");
-            System.out.println("14. Exit");
-            System.out.print("Enter your choice: ");
+                    case 1:
+                        System.out.println("Student Information");
+                        System.out.println("Name : Lalitha");
+                        System.out.println("Roll No : 101");
+                        break;
 
-            choice = sc.nextInt();
+                    case 2:
+                        System.out.println("Enter Student Name: ");
+                        name = sc.nextLine();
 
-            switch (choice) {
+                        System.out.println("Enter Roll Number: ");
+                        rollno = sc.nextInt();
 
-                case 1:
-                    sc.nextLine();
-                    System.out.print("Enter Name: ");
-                    String name = sc.nextLine();
+                        System.out.println("Enter English Marks: ");
+                        marks1 = sc.nextDouble();
 
-                    System.out.print("Enter Roll Number: ");
-                    int roll = sc.nextInt();
+                        System.out.print("Enter Maths Marks: ");
+                        marks2 = sc.nextDouble();
 
-                    System.out.print("Enter Marks in 3 Subjects: ");
-                    int m1 = sc.nextInt();
-                    int m2 = sc.nextInt();
-                    int m3 = sc.nextInt();
+                        System.out.print("Enter Social Marks: ");
+                        marks3 = sc.nextDouble();
+                        break;
 
-                    int total = m1 + m2 + m3;
-                    double percentage = total / 3.0;
+                    case 3:
+                        System.out.print("Enter English Marks: ");
+                        marks1 = sc.nextDouble();
 
-                    System.out.println("\nStudent Details");
-                    System.out.println("Name: " + name);
-                    System.out.println("Roll No: " + roll);
-                    System.out.println("Total Marks: " + total);
-                    System.out.println("Percentage: " + percentage + "%");
-                    break;
+                        System.out.print("Enter Maths Marks: ");
+                        marks2 = sc.nextDouble();
 
-                case 2:
-                    System.out.print("Enter Number: ");
-                    int num = sc.nextInt();
+                        System.out.print("Enter Social Marks: ");
+                        marks3 = sc.nextDouble();
 
-                    if (num % 2 == 0)
-                        System.out.println("Even Number");
-                    else
-                        System.out.println("Odd Number");
-                    break;
+                        total = marks1 + marks2 + marks3;
+                        percentage = (total / 300) * 100;
 
-                case 3:
-                    System.out.print("Enter Three Numbers: ");
-                    int a = sc.nextInt();
-                    int b = sc.nextInt();
-                    int c = sc.nextInt();
+                        System.out.println("Total = " + total);
+                        System.out.println("Percentage = " + percentage);
+                        break;
 
-                    int largest = a;
+                    case 4:
+                        System.out.print("Enter Student Name: ");
+                        name = sc.nextLine();
 
-                    if (b > largest)
-                        largest = b;
-                    if (c > largest)
-                        largest = c;
+                        System.out.print("Enter Roll Number: ");
+                        rollno = sc.nextInt();
 
-                    System.out.println("Largest Number = " + largest);
-                    break;
+                        System.out.print("Enter English Marks: ");
+                        marks1 = sc.nextDouble();
 
-                case 4:
-                    System.out.print("Enter Percentage: ");
-                    double per = sc.nextDouble();
+                        System.out.print("Enter Maths Marks: ");
+                        marks2 = sc.nextDouble();
 
-                    if (per >= 90)
-                        System.out.println("Grade: A");
-                    else if (per >= 75)
-                        System.out.println("Grade: B");
-                    else if (per >= 60)
-                        System.out.println("Grade: C");
-                    else if (per >= 40)
-                        System.out.println("Grade: D");
-                    else
-                        System.out.println("Grade: Fail");
-                    break;
+                        System.out.print("Enter Social Marks: ");
+                        marks3 = sc.nextDouble();
 
-                case 5:
-                    System.out.print("Enter Day Number (1-7): ");
-                    int day = sc.nextInt();
+                        total = marks1 + marks2 + marks3;
+                        percentage = (total / 300) * 100;
 
-                    switch (day) {
-                        case 1:
-                            System.out.println("Monday");
-                            break;
-                        case 2:
-                            System.out.println("Tuesday");
-                            break;
-                        case 3:
-                            System.out.println("Wednesday");
-                            break;
-                        case 4:
-                            System.out.println("Thursday");
-                            break;
-                        case 5:
-                            System.out.println("Friday");
-                            break;
-                        case 6:
-                            System.out.println("Saturday");
-                            break;
-                        case 7:
-                            System.out.println("Sunday");
-                            break;
-                        default:
-                            System.out.println("Invalid Day");
-                    }
-                    break;
+                        System.out.println("\n----- RESULT -----");
+                        System.out.println("Name : " + name);
+                        System.out.println("Roll No : " + rollno);
+                        System.out.println("Total : " + total);
+                        System.out.println("Percentage : " + percentage);
+                        break;
 
-                case 6:
-                    System.out.print("Enter Number: ");
-                    int table = sc.nextInt();
+                    default:
+                        System.out.println("Invalid Choice");
+                }
+                break;
+            case 2:
+                System.out.println("enter case 1-4");
+                int bchoice = sc.nextInt();
+                switch (bchoice) {
+                    case 1:
+                        System.out.print("Enter a number: ");
+                        int n = sc.nextInt();
 
-                    for (int i = 1; i <= 10; i++) {
-                        System.out.println(table + " x " + i + " = " + (table * i));
-                    }
-                    break;
+                        if (n % 2 == 0)
+                            System.out.println("Even Number");
+                        else
+                            System.out.println("Odd Number");
+                        break;
 
-                case 7:
-                    System.out.print("Enter N: ");
-                    int n = sc.nextInt();
+                    case 2:
+                        System.out.print("Enter first number: ");
+                        int a = sc.nextInt();
 
-                    for (int i = 1; i <= n; i++) {
-                        System.out.print(i + " ");
-                    }
-                    System.out.println();
-                    break;
+                        System.out.print("Enter second number: ");
+                        int b = sc.nextInt();
 
-                case 8:
-                    System.out.print("Enter N: ");
-                    int num1 = sc.nextInt();
+                        System.out.print("Enter third number: ");
+                        int c = sc.nextInt();
 
-                    int sum = 0;
-                    for (int i = 1; i <= num1; i++) {
-                        sum += i;
-                    }
+                        if (a >= b && a >= c)
+                            System.out.println("Largest = " + a);
+                        else if (b >= a && b >= c)
+                            System.out.println("Largest = " + b);
+                        else
+                            System.out.println("Largest = " + c);
+                        break;
 
-                    System.out.println("Sum = " + sum);
-                    break;
+                    case 3:
+                        System.out.print("Enter percentage: ");
+                        double per = sc.nextDouble();
 
-                case 9:
-                    System.out.print("Enter Number of Terms: ");
-                    int terms = sc.nextInt();
+                        if (per >= 90)
+                            System.out.println("Grade A");
+                        else if (per >= 75)
+                            System.out.println("Grade B");
+                        else if (per >= 60)
+                            System.out.println("Grade C");
+                        else if (per >= 40)
+                            System.out.println("Grade D");
+                        else
+                            System.out.println("Fail");
+                        break;
 
-                    int f1 = 0, f2 = 1;
+                    case 4:
+                        System.out.print("Enter day number (1-7): ");
+                        int day = sc.nextInt();
 
-                    System.out.print("Fibonacci Series: ");
+                        switch (day) {
+                            case 1:
+                                System.out.println("Monday");
+                                break;
+                            case 2:
+                                System.out.println("Tuesday");
+                                break;
+                            case 3:
+                                System.out.println("Wednesday");
+                                break;
+                            case 4:
+                                System.out.println("Thursday");
+                                break;
+                            case 5:
+                                System.out.println("Friday");
+                                break;
+                            case 6:
+                                System.out.println("Saturday");
+                                break;
+                            case 7:
+                                System.out.println("Sunday");
+                                break;
+                            default:
+                                System.out.println("Invalid Day");
+                        }
+                        break;
 
-                    for (int i = 1; i <= terms; i++) {
-                        System.out.print(f1 + " ");
-                        int next = f1 + f2;
-                        f1 = f2;
-                        f2 = next;
-                    }
-                    System.out.println();
-                    break;
+                }
+            case 3:
+                System.out.println("enter case 1-4");
+                int cchoice = sc.nextInt();
 
-                case 10:
-                    System.out.print("Enter Number: ");
-                    int factNum = sc.nextInt();
+                switch (cchoice) {
 
-                    System.out.println("Factorial = " + factorial(factNum));
-                    break;
+                    case 1:
+                        System.out.print("Enter a number: ");
+                        int num = sc.nextInt();
 
-                case 11:
-                    System.out.print("Enter Number: ");
-                    int primeNum = sc.nextInt();
+                        System.out.println("Multiplication Table:");
+                        for (int i = 1; i <= 10; i++) {
+                            System.out.println(num + " x " + i + " = " + (num * i));
+                        }
+                        break;
 
-                    if (prime(primeNum))
-                        System.out.println("Prime Number");
-                    else
-                        System.out.println("Not Prime Number");
-                    break;
+                    case 2:
+                        System.out.print("Enter N: ");
+                        int n = sc.nextInt();
 
-                case 12:
-                    System.out.print("Enter Two Numbers: ");
-                    int x = sc.nextInt();
-                    int y = sc.nextInt();
+                        System.out.println("Numbers from 1 to " + n + ":");
+                        for (int i = 1; i <= n; i++) {
+                            System.out.print(i + " ");
+                        }
+                        break;
 
-                    System.out.println("Maximum = " + maximum(x, y));
-                    break;
+                    case 3:
+                        System.out.print("Enter N: ");
+                        int m = sc.nextInt();
 
-                case 13:
-                    System.out.print("Enter Radius: ");
-                    double r = sc.nextDouble();
+                        int sum = 0;
+                        for (int i = 1; i <= m; i++) {
+                            sum = sum + i;
+                        }
 
-                    System.out.println("Area = " + areaOfCircle(r));
-                    break;
+                        System.out.println("Sum = " + sum);
+                        break;
 
-                case 14:
-                    System.out.println("Thank You!");
-                    break;
+                    case 4:
+                        System.out.print("Enter number of terms: ");
+                        int terms = sc.nextInt();
 
-                default:
-                    System.out.println("Invalid Choice!");
-            }
+                        int a = 0, b = 1, c;
 
-        } while (choice != 14);
+                        System.out.println("Fibonacci Series:");
+                        for (int i = 1; i <= terms; i++) {
+                            System.out.print(a + " ");
+                            c = a + b;
+                            a = b;
+                            b = c;
+                        }
+                        break;
 
-        sc.close();
+
+                }
+            case 4:
+                System.out.println("enter case 1-4");
+                    int dchoice = sc.nextInt();
+
+                switch (dchoice) {
+
+                    case 1:
+                        System.out.print("Enter a number: ");
+                        int n = sc.nextInt();
+
+                        int fact = 1;
+                        for (int i = 1; i <= n; i++) {
+                            fact = fact * i;
+                        }
+
+                        System.out.println("Factorial = " + fact);
+                        break;
+
+                    case 2:
+                        System.out.print("Enter a number: ");
+                        int num = sc.nextInt();
+
+                        int count = 0;
+                        for (int i = 1; i <= num; i++) {
+                            if (num % i == 0) {
+                                count++;
+                            }
+                        }
+
+                        if (count == 2)
+                            System.out.println("Prime Number");
+                        else
+                            System.out.println("Not a Prime Number");
+                        break;
+
+                    case 3:
+                        System.out.print("Enter first number: ");
+                        int a = sc.nextInt();
+
+                        System.out.print("Enter second number: ");
+                        int b = sc.nextInt();
+
+                        if (a > b)
+                            System.out.println("Maximum = " + a);
+                        else
+                            System.out.println("Maximum = " + b);
+                        break;
+
+                    case 4:
+                        System.out.print("Enter radius: ");
+                        double r = sc.nextDouble();
+
+                        double area = 3.14 * r * r;
+
+                        System.out.println("Area of Circle = " + area);
+                        break;
+
+                    default:
+                        System.out.println("Invalid Choice");
+                }
+                break;
+        }
+
     }
 }
 
-===== STUDENT UTILITY PROGRAM =====
-1. Student Information
-2. Even or Odd
-3. Largest of Three Numbers
-4. Display Grade
-5. Day of Week
-6. Multiplication Table
-7. Numbers from 1 to N
-8. Sum of First N Natural Numbers
-9. Fibonacci Series
-10. Factorial
-11. Prime Number Check
-12. Maximum of Two Numbers
-13. Area of Circle
-14. Exit
+1. Part 1
+2. Part 2
+3. Part 3
+4. Part 4
 Enter your choice: 1
+Enter case 1-4: 1
+Student Information
+Name : Lalitha
+Roll No : 101
 
-Enter Name: Reshma
+1. Part 1
+2. Part 2
+3. Part 3
+4. Part 4
+Enter your choice: 1
+Enter case 1-4: 2
+Enter Student Name: Ramesh
 Enter Roll Number: 101
-Enter Marks in 3 Subjects: 85 90 95
+Enter English Marks: 80
+Enter Maths Marks: 90
+Enter Social Marks: 85
 
-Student Details
-Name: Reshma
-Roll No: 101
-Total Marks: 270
-Percentage: 90.0%
+1. Part 1
+2. Part 2
+3. Part 3
+4. Part 4
+Enter your choice: 1
+Enter case 1-4: 3
+Enter English Marks: 80
+Enter Maths Marks: 90
+Enter Social Marks: 85
+Total = 255.0
+Percentage = 85.0
 
+1. Part 1
+2. Part 2
+3. Part 3
+4. Part 4
+Enter your choice: 1
+Enter case 1-4: 4
+Enter Student Name: Reshma
+Enter Roll Number: 101
+Enter English Marks: 80
+Enter Maths Marks: 90
+Enter Social Marks: 85
 
-===== STUDENT UTILITY PROGRAM =====
+----- RESULT -----
+Name : Reshma
+Roll No : 101
+Total : 255.0
+Percentage : 85.0
+
+1. Part 1
+2. Part 2
+3. Part 3
+4. Part 4
 Enter your choice: 2
-Enter Number: 10
+enter case 1-4: 1
+Enter a number: 10
 Even Number
 
+1. Part 1
+2. Part 2
+3. Part 3
+4. Part 4
+Enter your choice: 2
+enter case 1-4: 2
+Enter first number: 10
+Enter second number: 25
+Enter third number: 15
+Largest = 25
 
-===== STUDENT UTILITY PROGRAM =====
-Enter your choice: 3
-Enter Three Numbers: 25 78 45
-Largest Number = 78
+1. Part 1
+2. Part 2
+3. Part 3
+4. Part 4
+Enter your choice: 2
+enter case 1-4: 3
+Enter percentage: 85
+Grade B
 
-
-===== STUDENT UTILITY PROGRAM =====
-Enter your choice: 4
-Enter Percentage: 85
-Grade: B
-
-
-===== STUDENT UTILITY PROGRAM =====
-Enter your choice: 5
-Enter Day Number (1-7): 3
+1. Part 1
+2. Part 2
+3. Part 3
+4. Part 4
+Enter your choice: 2
+enter case 1-4: 4
+Enter day number (1-7): 3
 Wednesday
 
-
-===== STUDENT UTILITY PROGRAM =====
-Enter your choice: 6
-Enter Number: 5
+1. Part 1
+2. Part 2
+3. Part 3
+4. Part 4
+Enter your choice: 3
+enter case 1-4: 1
+Enter a number: 5
+Multiplication Table:
 5 x 1 = 5
 5 x 2 = 10
 5 x 3 = 15
@@ -315,60 +396,68 @@ Enter Number: 5
 5 x 9 = 45
 5 x 10 = 50
 
-
-===== STUDENT UTILITY PROGRAM =====
-Enter your choice: 7
+1. Part 1
+2. Part 2
+3. Part 3
+4. Part 4
+Enter your choice: 3
+enter case 1-4: 2
 Enter N: 5
+Numbers from 1 to 5:
 1 2 3 4 5
 
-
-===== STUDENT UTILITY PROGRAM =====
-Enter your choice: 8
+1. Part 1
+2. Part 2
+3. Part 3
+4. Part 4
+Enter your choice: 3
+enter case 1-4: 3
 Enter N: 5
 Sum = 15
 
+1. Part 1
+2. Part 2
+3. Part 3
+4. Part 4
+Enter your choice: 3
+enter case 1-4: 4
+Enter number of terms: 7
+Fibonacci Series:
+0 1 1 2 3 5 8
 
-===== STUDENT UTILITY PROGRAM =====
-Enter your choice: 9
-Enter Number of Terms: 7
-Fibonacci Series: 0 1 1 2 3 5 8
-
-
-===== STUDENT UTILITY PROGRAM =====
-Enter your choice: 10
-Enter Number: 5
+1. Part 1
+2. Part 2
+3. Part 3
+4. Part 4
+Enter your choice: 4
+enter case 1-4: 1
+Enter a number: 5
 Factorial = 120
 
-
-===== STUDENT UTILITY PROGRAM =====
-Enter your choice: 11
-Enter Number: 17
+1. Part 1
+2. Part 2
+3. Part 3
+4. Part 4
+Enter your choice: 4
+enter case 1-4: 2
+Enter a number: 7
 Prime Number
 
-
-===== STUDENT UTILITY PROGRAM =====
-Enter your choice: 12
-Enter Two Numbers: 25 40
+1. Part 1
+2. Part 2
+3. Part 3
+4. Part 4
+Enter your choice: 4
+enter case 1-4: 3
+Enter first number: 25
+Enter second number: 40
 Maximum = 40
 
-
-===== STUDENT UTILITY PROGRAM =====
-Enter your choice: 13
-Enter Radius: 5
-Area = 78.5
-
-
-===== STUDENT UTILITY PROGRAM =====
-Enter your choice: 14
-Thank You!
-
-
-
-
-
-
-
-
-
-
-
+1. Part 1
+2. Part 2
+3. Part 3
+4. Part 4
+Enter your choice: 4
+enter case 1-4: 4
+Enter radius: 5
+Area of Circle = 78.5
