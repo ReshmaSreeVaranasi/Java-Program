@@ -1,0 +1,198 @@
+package javacore;
+class Book{
+   private int BookId;
+   private String BookName;
+    private String Author;
+    private int Price;
+
+Book() {
+    BookId=123;
+    BookName="Malgudi Days";
+    Author="RkNarayan";
+    Price=299;
+}
+Book(int BookId,String BookName,String Autho,int Price){
+    this.BookId=BookId;
+    this.BookName=BookName;
+    this.Author=Author;
+    this.Price=Price;
+}
+int getBookId(){
+    return BookId;
+}
+String getBookName(){
+    return BookName;
+}
+String getAuthor(){
+    return Author;
+}
+int getPrice(){
+    return Price;
+}
+void setBookId(int BookId){
+    this.BookId=BookId;
+}
+void setBookName(String BookName){
+    this.BookName=BookName;
+}
+void setAuthor(String Author){
+    this.Author=Author;
+}
+void setPrice(int Price){
+    this.Price=Price;
+}
+void displayBook(){
+    System.out.println("Book Id: "+BookId);
+    System.out.println("Book Name: "+BookName);
+    System.out.println("Author: " + Author);
+    System.out.println("Price: " + Price);
+}
+}
+class Person{
+    String name;
+    int age;
+    Person(String name,int age){
+        this.name=name;
+        this.age=age;
+    }
+    void displayPerson(){
+        System.out.println("Name: "+name);
+        System.out.println("Age : "+age);
+    }
+}
+class Student extends Person{
+    int rollNo;
+    Student(String name,int age,int rollNo) {
+        super(name,age);
+        this.rollNo=rollNo;
+    }
+    void displayStudent(){
+        displayPerson();
+        System.out.println("Roll no: "+rollNo);
+    }
+}
+class Faculty extends Person{
+    String subject;
+    Faculty(String name,int age,String subject){
+        super(name,age);
+        this.subject=subject;
+    }
+    void displayFaculty(){
+        displayPerson();
+        System.out.println("Sub:"+subject);
+    }
+}
+class Area{
+    int calculatArea(int side){
+        return side*side;
+    }
+    int calculateArea(int length,int breadth){
+        return  length*breadth;
+    }
+    double calculateArea(double radius) {
+        return 3.14*radius*radius;
+    }
+}
+class Vehicle{
+    void display(){
+        System.out.println("This is a vehicle");
+    }
+}
+class Car extends Vehicle{
+    void display(){
+        System.out.println("This is a car");
+    }
+}
+class Bike extends Vehicle{
+    @Override
+    void display() {
+        System.out.println("This is a bike");
+    }
+}
+abstract class Shape{
+    abstract void draw();
+}
+class Circle extends Shape{
+    void draw(){
+        System.out.println("Draw circle");
+    }
+}
+class Rectangle extends Shape{
+    void draw(){
+        System.out.println("Draw rectangle");
+    }
+}
+interface Printable {
+    void print();
+}
+class Report implements Printable{
+    public void print(){
+        System.out.println("Printing Report");
+    }
+}
+
+public class LibMangSys {
+    public static void main(String[] args) {
+        System.out.println("Book Details");
+        Book b1=new Book();
+        Book b2=new Book(108,"Life","Thomas",500);
+        b1.displayBook();
+        System.out.println();
+        b2.displayBook();
+        System.out.println("Inheritance");
+        Student s=new Student("Ram",20,18);
+        s.displayStudent();
+        System.out.println();
+        Faculty f=new Faculty("Ramesh",38,"Maths");
+        f.displayFaculty();
+        System.out.println("Overloading");
+        Area a=new Area();
+        System.out.println("Area Square: "+a.calculatArea(4));
+        System.out.println("Area Rectangle: "+a.calculateArea(5,6));
+        System.out.println("Area Circle: "+a.calculateArea(9.0));
+        System.out.println("Overriding");
+        Vehicle v1= new Car();
+        Vehicle v2=new Bike();
+        v1.display();
+        v2.display();
+        System.out.println("Abstraction");
+        Shape c=new Circle();
+        Shape r=new Rectangle();
+        c.draw();
+        r.draw();
+        System.out.println("Interface");
+        Report re=new Report();
+        re.print();
+    }
+}
+
+Book Details
+Book Id: 123
+Book Name: Malgudi Days
+Author: RkNarayan
+Price: 299
+
+Book Id: 108
+Book Name: Life
+Author: Thomas
+Price: 500
+Inheritance
+Name: Ram
+Age : 20
+Roll no: 18
+
+Name: Ramesh
+Age : 38
+Sub:Maths
+Overloading
+Area Square: 16
+Area Rectangle: 30
+Area Circle: 254.34
+Overriding
+This is a car
+This is a bike
+Abstraction
+Draw circle
+Draw rectangle
+Interface
+Printing Report
