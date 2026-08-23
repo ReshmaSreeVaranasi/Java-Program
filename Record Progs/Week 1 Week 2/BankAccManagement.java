@@ -45,7 +45,7 @@ class CurrentAccount extends Account{
     }
     void withdraw(double amount){
         if(amount<=balance+overDraftLimit){
-            balance=amount-balance;
+            balance=balance-amount;
             System.out.println(("Withdrawn: "+amount));
         }
         else{
